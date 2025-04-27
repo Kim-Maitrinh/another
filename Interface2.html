@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          
+            margin: 0;
+        }
+        .grid {
+            display: grid;
+            gap:0px;
+            grid-template-columns: 40vw 40vw 40vw;
+            grid-template-rows: 38vh 38vh 38vh;
+            padding-top: 100px;
+
+            /* gap: 10px; */
+        }
+
+        .grid img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .h{
+            grid-row: span 2;
+        }
+
+        .l{
+            grid-column: span 2;
+        } 
+        .grid-01{
+            grid-template-columns: 70vw 15vw 15vw;
+            grid-template-rows: 33vh 33vh 33vh;
+        }
+        p{
+            color:rgb(0, 0, 0);
+            z-index: 9999;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        *{
+      box-sizing: border-box;
+    }
+
+    :root {
+      overscroll-behavior: none;
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+    
+    html{
+      scroll-behavior: smooth;
+    }
+
+
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: Impact, Arial, Helvetica, sans-serif;
+    color: rgb(67, 64, 66);
+      background-color: rgba(255, 255, 255, 0.158);
+    }
+    
+
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .fixed{
+      position: fixed;
+    }
+
+    .overlay{
+      position: absolute;
+      width: 100%;
+      min-height: 100vh;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 48px;
+      top: 0;
+      left:0; 
+   
+    }
+    .close{
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 48px;
+      background: #000;
+      border-radius: 24px;
+    }
+
+    .wrap{
+      width:100%;
+    }
+
+    .fiche{
+      margin: 0px auto;
+      max-width: 640px;
+      background: #fff;
+      padding: 0 20px 20px;  
+    }
+
+
+
+    .fiche p {
+    font-family: 'Roboto', Arial, sans-serif; /* par exemple Roboto */
+    font-size: 16px; /* Taille plus agréable à lire */
+    color: #383737; /* Gris foncé, pas noir brutal */
+    line-height: 1; /* Plus d'espace entre les lignes */
+}
+
+
+    .fiche img{
+      margin:0 -20px 20px;
+      width: calc(100% + 40px);
+    }
+
+    .header {
+    height: 75px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25px; /* Espace seulement à gauche */
+    padding-right: 25px; /* Moins d'espace à droite */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.header-left {
+    font-size: 37px;
+    font-weight: bold;
+    color: rgb(255, 191, 230);
+    cursor: pointer;
+}
+
+.header-right {
+    font-size: 37px;
+    color: rgb(255, 191, 230);
+   
+}
+.modal {
+    display: none; /* caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal-content p {
+    font-family: 'Roboto', Arial, sans-serif; /* Modifie la police du texte */
+    font-size: 18px; /* Taille de la police */
+    color: #333; /* Couleur du texte */
+    line-height: 1.6; /* Espacement entre les lignes pour plus de lisibilité */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Bonjour!</h2>
+        <p>Je m'appelle Kim-Mai et je suis étudiante en deuxième année de design graphique à l'Ésad d'Amiens. Dans cet espace je partage mes projets et réalisations faites dans le cadre de mes études mais aussi personnelles.
+        N'hésitez pas à me contacter pour plus d'informations!
+          
+        <p>mail: trinhkimmai927@gmail.com /
+          instagram: _k.design </p>
+    </div>
+</div>
+
+
+  <header class="header">
+    <div class="header-left" id="openModal">Kim Mai Trinh</div>
+    <div class="header-right">Portfolio</div>
+</header>
+
+    
+</header>
+
+
+
+    <div class="grid">
+      
+        
+    </div>
+   
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- flip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+    <script type="module" src="Interface.js"></script>
+
+    <script>
+      // Récupérer l'élément modal
+      var modal = document.getElementById("modal");
+  
+      // Récupérer l'élément qui ouvre le modal (ton prénom)
+      var btn = document.getElementById("openModal");
+  
+      // Récupérer l'élément <span> qui permet de fermer le modal
+      var span = document.getElementById("closeModal");
+  
+      // Quand l'utilisateur clique sur le prénom, ouvrir le modal
+      btn.onclick = function() {
+          modal.style.display = "flex";
+      }
+  
+      // Quand l'utilisateur clique sur <span> (fermer), fermer le modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+  
+      // Quand l'utilisateur clique en dehors de la fenêtre modale, la fermer
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+  </script>
+  
+
+ 
+
+</body>
+</html>
+
+
